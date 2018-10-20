@@ -11,7 +11,7 @@ So, I have tried to create a very simple, dependency-lite, install of Vault that
 The provided installation script, [install_vault.sh](/scripts/install_vault.sh), does the following:
 
 * Creates a self-signed CA Certificate and TLS keypair for Vault TLS.
-* Downloads and installs the current (0.11.3 version of [HashiCorp Vault](https://www.vaultproject.io/downloads.html) into `/usr/local/bin`. The script uses Keybase to verify the SHA256SUM signature on the Vault release.
+* Downloads and installs the current (0.11.3) version of [HashiCorp Vault](https://www.vaultproject.io/downloads.html) into `/usr/local/bin`. The script uses Keybase to verify the SHA256SUM signature on the Vault release.
 * Configures Vault to use TLS and file-based persistence by writing a configuration to your `$HOME` directory: `$HOME/etc/vault.d`.
 * Downloads and installs the current (0.0.4) version of [Immutability Vault-Ethereum plugin](https://github.com/immutability-io/vault-ethereum/releases) into `$HOME/etc/vault.d/vault_plugins`. The script uses Keybase to verify the SHA256SUM signature on the plugin release.
 * Starts vault (`/usr/local/bin/vault server -config $HOME/etc/vault.d/vault.hcl`), initializes and unseals Vault. The [unseal keys](https://www.vaultproject.io/docs/concepts/seal.html) are encrypted with the supplied Keybase PGP identity and stored in the same directory where the script was run. The [Vault root token](https://www.vaultproject.io/docs/concepts/tokens.html#root-tokens) is similarly encrypted.
