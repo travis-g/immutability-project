@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PLUGIN_VERSION="0.0.4"
-VAULT_VERSION="0.10.1"
+VAULT_VERSION="0.11.3"
 
 function print_help {
     echo "Usage: bash install.sh OPTIONS"
